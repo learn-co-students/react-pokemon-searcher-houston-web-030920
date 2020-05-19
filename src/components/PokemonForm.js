@@ -13,11 +13,20 @@ class PokemonForm extends React.Component {
     }
   }
 
+  clearForm = () => {
+    this.setState({
+      name: '',
+      hp: '',
+      frontUrl: '',
+      backUrl: ''
+    })
+  }
+
   render() {
     return (
       <div>
         <h3>Add a Pokemon!</h3>
-        <Form onSubmit={() => {console.log("submitting form...")}}>
+        <Form onSubmit={(e) => this.props.submit(e)}>
           <Form.Group widths="equal">
             <Form.Input fluid label="Name" placeholder="Name" name="name" />
             <Form.Input fluid label="hp" placeholder="hp" name="hp" />
