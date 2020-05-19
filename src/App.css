@@ -21,3 +21,33 @@
 .App-intro {
   font-size: large;
 }
+
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:active {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+.card__face {
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.card__face--back {
+  transform: rotateY( 180deg );
+}
+
+.card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+
+
